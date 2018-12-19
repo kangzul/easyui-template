@@ -1,0 +1,57 @@
+body {
+    font-family:verdana,helvetica,arial,sans-serif;
+    padding:20px;
+    font-size:12px;
+    margin:0;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    background: #3367d6;
+    grid-gap: 10px;
+    color: #fff;
+    height: 100px;
+}
+.app-title, .app-information {
+    padding: 10px;
+}
+.app-title h1, .app-title p {
+    margin: 0px;
+    padding: 0px;
+}
+.app-logo img {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75px;
+}
+.app-information a, .app-information #jam {
+    float: right;
+    clear: right;
+}
+#jam {
+    margin-top: 15px;
+    text-align: right;
+}
+.tree-title a {
+    text-decoration: none;
+    color: #000000;
+}
+.tree-node-selected .tree-title a {
+    color: #fefefe;
+}
+.tab-content {
+    padding: 5px;
+}
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../images/preloader.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: 1;
+}

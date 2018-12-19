@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Login Easy UI</title>
+	<link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="./demo/demo.css">
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript" src="./jquery.easyui.min.js"></script>
+	<style>
+		.login-box {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="easyui-dialog" closable="false" shadow="false" draggable="false" iconCls="icon-lock" title="Login" style="width:400px;height:200px;padding:10px;">
+		<form class="easyui-form" method="post" data-options="novalidate:true" action="do/doLogin.jsp">
+			<table cellpadding="5" align="center">
+				<tr>
+					<td>Username:</td>
+					<td><input class="easyui-textbox" type="text" name="uname" data-options="required:true,prompt:'Input Username'"></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input class="easyui-textbox" type="password" name="upwd" data-options="required:true,prompt:'Input Password'"></td>
+				</tr>
+			</table>
+		</form>
+		<div style="text-align:center;padding:5px">
+			<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-man">Login</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-clear">Reset</a>
+		</div>
+	</div>
+</body>
+
+
+</html>

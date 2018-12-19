@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template easyUI</title>
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./assets/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/icon.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.easyui.min.js"></script>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <div class="easyui-layout" data-options="fit:true" id="myLayout">
+        <div region="north" class="header">
+            <div class="app-logo">
+                <img src="./assets/images/logo.png" alt="Logo">
+            </div>
+            <div class="app-title">
+                <h1>Sistem Informasi</h1>
+                <p>Madrasah Aliyah Minhajut Tholabah <br>
+                Kembangan Bukateja Purbalingga</p>
+            </div>
+            <div class="app-information">
+                <a href="javascript:void(0)" id="logout-btn" class="easyui-linkbutton" data-options="iconCls:'icon-clear'">Logout</a>
+                <div id="jam"></div>
+            </div>
+        </div>
+        <div region="west" title="Daftar Menu" style="width:15%;min-width:200px;padding:5px;">
+            <ul id="tt" class="easyui-tree" data-options="animate:true">
+                <li>
+                    <span>Daftar Menu</span>
+                    <ul>
+                        <li><a href="#" link="Say_Hello">index.html</a></li>
+                        <li>about.html</li>
+                        <li>welcome.html</li>
+                    </ul>
+                </li>
+                <li>
+                    <span> Setting</span>
+                    <ul>
+                        <li>Utama</li>
+                        <li>Tambahan</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div region="center">
+            <div id="tabs" class="easyui-tabs" fit="true" border="false" plain="true">
+                <div title="Welcome" style="padding:5px;">
+                    <table id="tb-grid" class="easyui-datagrid"></table>
+                </div>
+            </div>
+        </div>
+        <div region="south" style="height:40px; text-align: center; padding-top: 10px"> Copyright 2018 Sistem Informasi Percobaan</div>
+    </div>
+    <script src="./assets/js/app.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        });
+        $('#tb-grid').datagrid({
+            title: 'Data Table Grid',
+            fit:true,
+            singleSelect:true,
+            url:'datagrid_data1.json',
+            method:'get',
+            rownumbers: true,
+            pagination: true,
+            columns: [ [
+                {field: 'itemid',title: 'Item ID'},
+                {field: 'productid',title: 'Product ID'},
+                {field: 'listprice',title: 'LIst Price'},
+                {field: 'unitcost',title: 'Unitcost'},
+                {field: 'status',title: 'Status'},
+                {field: 'attr1',title: 'Atribut'},
+            ] ],
+            toolbar: [
+                {text: 'Add',iconCls:'icon-add'},
+                {text: 'Edit',iconCls:'icon-edit'},
+                {text: 'Remove',iconCls:'icon-remove'},
+                {text: 'Reload',iconCls:'icon-reload'},
+            ]
+        });
+    </script>
+</body>
+
+</html>
